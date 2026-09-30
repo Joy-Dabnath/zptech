@@ -1,0 +1,40 @@
+/* ===== Cart Drawer ===== */
+.zpc-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;z-index:1100}
+.zpc-overlay.open{opacity:1;visibility:visible}
+.zpc-drawer{position:fixed;top:0;right:0;height:100%;width:400px;max-width:100%;background:#0a0a0a;color:#fff;font-family:'Arial',sans-serif;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);z-index:1101;box-shadow:-10px 0 40px rgba(0,0,0,.6);visibility:hidden}
+.zpc-drawer.open{transform:translateX(0);visibility:visible}
+body.zpc-lock{overflow:hidden}
+
+.zpc-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid #222}
+.zpc-title{font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.zpc-title span{color:#b2834b;margin-left:6px}
+.zpc-close{background:transparent;border:1px solid #333;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;transition:all .3s ease}
+.zpc-close:hover{background:#fff;color:#000;transform:rotate(90deg)}
+
+.zpc-list{flex:1;overflow-y:auto;padding:10px 24px;list-style:none}
+.zpc-item{display:grid;grid-template-columns:70px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid #1c1c1c}
+.zpc-item img{width:70px;height:70px;object-fit:contain;background:#151515;border-radius:8px}
+.zpc-name{font-size:.95rem;font-weight:700;margin-bottom:4px}
+.zpc-price{font-size:.85rem;color:#b3b3b3;margin-bottom:10px}
+.zpc-qty{display:inline-flex;align-items:center;border:1px solid #333;border-radius:5px;overflow:hidden}
+.zpc-qty button{background:transparent;border:none;color:#fff;width:28px;height:28px;cursor:pointer;font-size:1rem;transition:background .2s ease}
+.zpc-qty button:hover{background:#222}
+.zpc-qty span{min-width:30px;text-align:center;font-size:.9rem}
+.zpc-line{text-align:right;font-weight:700;font-size:.95rem}
+.zpc-remove{display:block;margin-top:10px;background:transparent;border:none;color:#888;font-size:.8rem;cursor:pointer;transition:color .2s ease}
+.zpc-remove:hover{color:#d32f2f}
+
+.zpc-empty{text-align:center;color:#b3b3b3;padding:80px 20px}
+.zpc-empty i{font-size:2.5rem;color:#333;margin-bottom:18px;display:block}
+
+.zpc-foot{padding:20px 24px 24px;border-top:1px solid #222;background:#0d0d0d}
+.zpc-row{display:flex;justify-content:space-between;margin-bottom:10px;font-size:.95rem;color:#ccc}
+.zpc-row.total{font-size:1.15rem;font-weight:700;color:#fff;margin:14px 0 18px}
+.zpc-btn{display:block;text-align:center;text-decoration:none;padding:13px;border-radius:6px;font-weight:700;font-size:.95rem;margin-bottom:10px;transition:all .3s ease}
+.zpc-btn.primary{background:#cbbcae;color:#000;border:2px solid #cbbcae}
+.zpc-btn.primary:hover{background:transparent;color:#cbbcae;transform:translateY(-2px)}
+.zpc-btn.ghost{border:1px solid #fff;color:#fff}
+.zpc-btn.ghost:hover{background:#fff;color:#000}
+.zpc-foot.hidden{display:none}
+
+@media(max-width:480px){.zpc-drawer{width:100%}}
